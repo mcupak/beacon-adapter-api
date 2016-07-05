@@ -1,6 +1,6 @@
-# Beacon-adapter-api
+# Beacon Adapter API
 
-The beacon-adapter-api is a component of the Java Beacon Development Kit (JBDK) which is used by developers to implement  [GA4GH's](http://genomicsandhealth.org/) beacon specification [found here](https://github.com/ga4gh/beacon-team). 
+Beacon Adapter API is a component of the Java Beacon Development Kit (JBDK) which is used by developers to implement  [GA4GH's](http://genomicsandhealth.org/) beacon specification [found here](https://github.com/ga4gh/beacon-team).
 It enables developers to create adapter components that can easily be swapped out of a [REST-Implementation](https://github.com/mcupak/beacon-java/tree/develop/beacon-java-rest) to configure different data sources with minimal configuration.
 
 
@@ -16,9 +16,6 @@ Implementing a custom adapter is easy:
 1. Add this project as a dependency to your project's pom
 2. Implement the BeaconAdapter
 3. Add your project as a dependency to the beacon-java-rest project's pom
-
-**Notes:**
-The beacon-java-rest project is deployed using Jboss. In order for it to detect the custom adapter in its classpath you must annotate your BeaconAdapter implementation with the `@Stateless` annotation from [javax:javaee-api:7.0](https://mvnrepository.com/artifact/javax/javaee-api/7.0)
 
 ### See Also:
 - [Beacon-Java git](https://github.com/mcupak/beacon-java/)

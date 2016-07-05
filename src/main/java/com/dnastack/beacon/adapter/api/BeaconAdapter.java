@@ -6,7 +6,8 @@ import org.ga4gh.beacon.BeaconAlleleRequest;
 import org.ga4gh.beacon.BeaconAlleleResponse;
 
 /**
- * Abstract Beacon adapter class to be used when creating a new beacon adapter
+ * Beacon adapter API.
+ * <p>
  * Created by patrickmagee on 2016-06-16.
  */
 public interface BeaconAdapter {
