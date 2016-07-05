@@ -6,11 +6,13 @@ import org.ga4gh.beacon.BeaconAlleleRequest;
 import org.ga4gh.beacon.BeaconAlleleResponse;
 
 import javax.annotation.PostConstruct;
+import javax.ejb.Stateless;
 
 /**
  * Abstract Beacon adapter class to be used when creating a new beacon adapter
  * Created by patrickmagee on 2016-06-16.
  */
+@Stateless
 public abstract class BeaconAdapter {
 
 
