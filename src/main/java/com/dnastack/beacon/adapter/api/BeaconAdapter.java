@@ -5,35 +5,25 @@ import org.ga4gh.beacon.Beacon;
 import org.ga4gh.beacon.BeaconAlleleRequest;
 import org.ga4gh.beacon.BeaconAlleleResponse;
 
-import javax.annotation.PostConstruct;
-import javax.ejb.Stateless;
-
 /**
  * Abstract Beacon adapter class to be used when creating a new beacon adapter
  * Created by patrickmagee on 2016-06-16.
  */
-@Stateless
-public abstract class BeaconAdapter {
-
-
-    /**
-     * Initializer for a beacon adapter, called after bean creation
-     */
-    @PostConstruct
-    public abstract void init();
+public interface BeaconAdapter {
 
     /**
      * Retrieve a Beacon allele response from the supplied datasource
-     * @param request
-     * @return
+     *
+     * @param request beacon allele request
+     * @return beacon allele response
      */
-    public abstract BeaconAlleleResponse getAlleleResponse(BeaconAlleleRequest request) throws BeaconException;
-
+    BeaconAlleleResponse getBeaconAlleleResponse(BeaconAlleleRequest request) throws BeaconException;
 
     /**
      * Retrieve information about the specified beacon
-     * @return
+     *
+     * @return beacon infroamtion
      */
-    public abstract Beacon getBeaconResponse() throws BeaconException;
+    Beacon getBeacon() throws BeaconException;
 
 }
