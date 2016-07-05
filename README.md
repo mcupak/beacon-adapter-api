@@ -1,4 +1,4 @@
-# Beacon Adapter API
+# Beacon Adapter API [![Build Status](https://travis-ci.org/mcupak/beacon-adapter-api.svg?branch=develop)](https://travis-ci.org/mcupak/beacon-adapter-api) [![GitHub license](https://img.shields.io/badge/license-Apache%202-blue.svg)](https://raw.githubusercontent.com/mcupak/beacon-adapter-api/develop/LICENSE)
 
 Beacon Adapter API is a component of the Java Beacon Development Kit (JBDK) which is used by developers to implement  [GA4GH's](http://genomicsandhealth.org/) beacon specification [found here](https://github.com/ga4gh/beacon-team).
 It enables developers to create adapter components that can easily be swapped out of a [REST-Implementation](https://github.com/mcupak/beacon-java/tree/develop/beacon-java-rest) to configure different data sources with minimal configuration.
