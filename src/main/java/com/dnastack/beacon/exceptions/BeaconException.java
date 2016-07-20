@@ -1,6 +1,8 @@
 package com.dnastack.beacon.exceptions;
 
 import com.dnastack.beacon.utils.Reason;
+import com.sun.org.apache.xalan.internal.xsltc.compiler.util.ErrorMessages;
+import org.ga4gh.beacon.BeaconError;
 
 /**
  * Base Beacon exceptions
@@ -10,10 +12,17 @@ import com.dnastack.beacon.utils.Reason;
 public class BeaconException extends Exception {
 
     private Reason reason;
+    private BeaconError error;
 
     public BeaconException(Reason reason) {
         super();
         this.reason = reason;
+    }
+
+    public BeaconException(Reason reason, BeaconError error) {
+        super();
+        this.reason = reason;
+        this.error = error;
     }
 
     public BeaconException(Reason reason, String msg) {
@@ -23,6 +32,10 @@ public class BeaconException extends Exception {
 
     public Reason getReason() {
         return reason;
+    }
+
+    public BeaconError getError() {
+        return error;
     }
 
 }
