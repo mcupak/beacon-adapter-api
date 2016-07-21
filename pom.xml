@@ -31,6 +31,12 @@
             <artifactId>beacon</artifactId>
             <version>0.3.0</version>
         </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.14.8</version>
+            <scope>provided</scope>
+        </dependency>
     </dependencies>
 
     <build>
@@ -43,6 +49,11 @@
                     <source>1.8</source>
                     <target>1.8</target>
                 </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok-maven-plugin</artifactId>
+                <version>1.14.8.0</version>
             </plugin>
         </plugins>
     </build>

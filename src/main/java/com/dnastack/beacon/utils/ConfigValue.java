@@ -21,36 +21,24 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package com.dnastack.beacon.exceptions;
+package com.dnastack.beacon.utils;
 
-import com.dnastack.beacon.utils.Reason;
-import lombok.Getter;
-import lombok.Setter;
-import org.ga4gh.beacon.BeaconAlleleRequest;
-import org.ga4gh.beacon.BeaconError;
+import lombok.Data;
+import lombok.NonNull;
 
 /**
- * Exception raised when there is an issue with the beacon allele request
+ * ConfigValue class for storing name-value pairs for adapter configuration
  *
- * @patrickmagee
+ * @author patmagee
  */
-public class BeaconAlleleRequestException extends BeaconException {
+@Data
+public class ConfigValue {
 
-    @Getter
-    @Setter
-    private BeaconAlleleRequest request;
+    private String name;
+    private String value;
 
-    public BeaconAlleleRequestException(String msg, Reason reason, BeaconAlleleRequest request) {
-        super(reason, msg);
-        this.request = request;
+    public ConfigValue(@NonNull String name, @NonNull String value) {
+        this.name = name;
+        this.value = value;
     }
-
-    public BeaconAlleleRequestException(Reason reason, String msg) {
-        super(reason, msg);
-    }
-
-    public BeaconAlleleRequestException(Reason reason, BeaconError error) {
-        super(reason, error);
-    }
-
 }

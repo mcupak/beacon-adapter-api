@@ -23,34 +23,14 @@
  */
 package com.dnastack.beacon.exceptions;
 
-import com.dnastack.beacon.utils.Reason;
-import lombok.Getter;
-import lombok.Setter;
-import org.ga4gh.beacon.BeaconAlleleRequest;
-import org.ga4gh.beacon.BeaconError;
+import lombok.NoArgsConstructor;
 
 /**
- * Exception raised when there is an issue with the beacon allele request
- *
- * @patrickmagee
+ * @author patmagee
  */
-public class BeaconAlleleRequestException extends BeaconException {
-
-    @Getter
-    @Setter
-    private BeaconAlleleRequest request;
-
-    public BeaconAlleleRequestException(String msg, Reason reason, BeaconAlleleRequest request) {
-        super(reason, msg);
-        this.request = request;
+@NoArgsConstructor
+public class IllegalBeaconAdapterException extends RuntimeException {
+    public IllegalBeaconAdapterException(String msg) {
+        super(msg);
     }
-
-    public BeaconAlleleRequestException(Reason reason, String msg) {
-        super(reason, msg);
-    }
-
-    public BeaconAlleleRequestException(Reason reason, BeaconError error) {
-        super(reason, error);
-    }
-
 }
