@@ -26,6 +26,7 @@ package com.dnastack.beacon.utils;
 import com.dnastack.beacon.adapter.api.BeaconAdapter;
 import com.dnastack.beacon.exceptions.IllegalBeaconAdapterException;
 import lombok.*;
+import lombok.experimental.Builder;
 
 import java.util.List;
 
@@ -35,33 +36,26 @@ import java.util.List;
  * @author patmagee
  */
 @Data
+@Builder
 public class AdapterConfig {
 
     /**
      * The name of the adapter. This is the name that the adapter will be registered under
      */
-    String name;
+    @NonNull
+    private String name;
 
     /**
      * Type this AdapterConfig so that it can be used to create a new instance of the adapter class
      */
-    String adapterClass;
+    @NonNull
+    private String adapterClass;
 
     /**
      * List of optional configValues to pass to the adapter
      */
-    List<ConfigValue> configValues;
-
-    public static AdapterConfigBuilder builder() {
-        return new AdapterConfigBuilder();
-    }
-
-    public AdapterConfig(@NonNull String name, @NonNull String clazz, @NonNull List<ConfigValue> configValues) {
-        this.configValues = configValues;
-        this.name = name;
-        this.adapterClass = clazz;
-    }
-
+    @NonNull
+    private List<ConfigValue> configValues;
 
     /**
      * Convert the adapterClass string into a Class<BeaconAdapter> object which can be used to create a new instance
@@ -82,44 +76,5 @@ public class AdapterConfig {
         }
 
     }
-
-    /**
-     * A builder class for the adapterConfig object
-     */
-    public static class AdapterConfigBuilder {
-
-        List<ConfigValue> values;
-        String name;
-        String clazz;
-
-        public AdapterConfigBuilder() {
-
-        }
-
-        public AdapterConfigBuilder setName(String name) {
-            this.name = name;
-            return this;
-        }
-
-        public AdapterConfigBuilder setAdapterClass(String clazz) {
-            this.clazz = clazz;
-            return this;
-        }
-
-        public AdapterConfigBuilder addConfig(String key, String value) {
-            values.add(new ConfigValue(key, value));
-            return this;
-        }
-
-        public AdapterConfig build() {
-            if (name == null) {
-                throw new IllegalStateException("Missing required Parameters: Name");
-            } else if (clazz == null) {
-                throw new IllegalStateException("Missing required Parameters: AdapterClass");
-            }
-            return new AdapterConfig(name, clazz, values);
-        }
-    }
-
 
 }

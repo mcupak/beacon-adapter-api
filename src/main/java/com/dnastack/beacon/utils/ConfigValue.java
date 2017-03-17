@@ -25,6 +25,7 @@ package com.dnastack.beacon.utils;
 
 import lombok.Data;
 import lombok.NonNull;
+import lombok.experimental.Builder;
 
 /**
  * ConfigValue class for storing name-value pairs for adapter configuration
@@ -32,13 +33,19 @@ import lombok.NonNull;
  * @author patmagee
  */
 @Data
+@Builder
 public class ConfigValue {
 
+    /**
+     * Name property
+     */
+    @NonNull
     private String name;
+
+    /**
+     * Value property
+     */
+    @NonNull
     private String value;
 
-    public ConfigValue(@NonNull String name, @NonNull String value) {
-        this.name = name;
-        this.value = value;
-    }
 }
