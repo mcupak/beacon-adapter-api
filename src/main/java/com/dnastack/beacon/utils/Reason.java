@@ -30,7 +30,11 @@ package com.dnastack.beacon.utils;
  */
 public enum Reason {
 
-    INVALID_REQUEST("Invalid request"), CONN_ERR("Could not retrieve information from beacon"), ERROR("An error occured");
+    INVALID_REQUEST("Invalid request"),
+
+    CONN_ERR("Could not retrieve information from beacon"),
+
+    ERROR("An error occured");
 
     private String msg;
 
