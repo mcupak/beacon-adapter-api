@@ -28,6 +28,7 @@ import com.dnastack.beacon.utils.AdapterConfig;
 import org.ga4gh.beacon.Beacon;
 import org.ga4gh.beacon.BeaconAlleleRequest;
 import org.ga4gh.beacon.BeaconAlleleResponse;
+import org.ga4gh.beacon.Chromosome;
 
 import java.util.List;
 
@@ -66,7 +67,7 @@ public interface BeaconAdapter {
      * @param includeDatasetResponses include
      * @return beacon allele response
      */
-    BeaconAlleleResponse getBeaconAlleleResponse(String referenceName, Long start, String referenceBases, String alternateBases, String assemblyId, List<String> datasetIds, BeaconAlleleRequest.IncludeDatasetResponsesEnum includeDatasetResponses) throws BeaconException;
+    BeaconAlleleResponse getBeaconAlleleResponse(Chromosome referenceName, Long start, String referenceBases, String alternateBases, String assemblyId, List<String> datasetIds, BeaconAlleleRequest.IncludeDatasetResponsesEnum includeDatasetResponses) throws BeaconException;
 
     /**
      * Retrieve information about the specified beacon
