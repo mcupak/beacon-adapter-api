@@ -41,7 +41,7 @@ public interface BeaconAdapter {
     /**
      * Initialization method for creating and configuring this new adapter
      *
-     * @param config
+     * @param config adapter configuration
      */
     void initAdapter(AdapterConfig config);
 
@@ -66,7 +66,7 @@ public interface BeaconAdapter {
      * @param includeDatasetResponses include
      * @return beacon allele response
      */
-    BeaconAlleleResponse getBeaconAlleleResponse(String referenceName, Long start, String referenceBases, String alternateBases, String assemblyId, List<String> datasetIds, Boolean includeDatasetResponses) throws BeaconException;
+    BeaconAlleleResponse getBeaconAlleleResponse(String referenceName, Long start, String referenceBases, String alternateBases, String assemblyId, List<String> datasetIds, BeaconAlleleRequest.IncludeDatasetResponsesEnum includeDatasetResponses) throws BeaconException;
 
     /**
      * Retrieve information about the specified beacon
