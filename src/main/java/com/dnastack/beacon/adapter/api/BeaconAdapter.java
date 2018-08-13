@@ -73,7 +73,7 @@ public interface BeaconAdapter {
      * @param includeDatasetResponses include datasets to response object
      * @return beacon allele response
      */
-    BeaconAlleleResponse getBeaconAlleleResponse(Chromosome referenceName, Long start, Long startMin, Long startMax, Long end, Long endMin, Long endMax, String referenceBases, String alternateBases, String variantType, String assemblyId, List<String> datasetIds, BeaconAlleleRequest.IncludeDatasetResponsesEnum includeDatasetResponses) throws BeaconException;
+    BeaconAlleleResponse getBeaconAlleleResponse(Chromosome referenceName, Long start, Integer startMin, Integer startMax, Integer end, Integer endMin, Integer endMax, String referenceBases, String alternateBases, String variantType, String assemblyId, List<String> datasetIds, BeaconAlleleRequest.IncludeDatasetResponsesEnum includeDatasetResponses) throws BeaconException;
 
     /**
      * Retrieve information about the specified beacon
