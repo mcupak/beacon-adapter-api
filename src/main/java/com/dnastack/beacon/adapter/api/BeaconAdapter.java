@@ -60,19 +60,25 @@ public interface BeaconAdapter {
      *
      * @param referenceName           name of the reference
      * @param start                   start position
+     * @param startMin                minimum start coordinate
+     * @param startMax                maximum start coordinate
+     * @param end                     precise end coordinate
+     * @param endMin                  minimum end coordinate
+     * @param endMax                  maximum end coordinate
      * @param referenceBases          reference bases
      * @param alternateBases          alternate bases
+     * @param variantType             used to denote structural variants
      * @param assemblyId              genome assembly
      * @param datasetIds              list of datasetIds
-     * @param includeDatasetResponses include
+     * @param includeDatasetResponses include datasets to response object
      * @return beacon allele response
      */
-    BeaconAlleleResponse getBeaconAlleleResponse(Chromosome referenceName, Long start, String referenceBases, String alternateBases, String assemblyId, List<String> datasetIds, BeaconAlleleRequest.IncludeDatasetResponsesEnum includeDatasetResponses) throws BeaconException;
+    BeaconAlleleResponse getBeaconAlleleResponse(Chromosome referenceName, Long start, Long startMin, Long startMax, Long end, Long endMin, Long endMax, String referenceBases, String alternateBases, String variantType, String assemblyId, List<String> datasetIds, BeaconAlleleRequest.IncludeDatasetResponsesEnum includeDatasetResponses) throws BeaconException;
 
     /**
      * Retrieve information about the specified beacon
      *
-     * @return beacon infroamtion
+     * @return beacon information
      */
     Beacon getBeacon() throws BeaconException;
 
