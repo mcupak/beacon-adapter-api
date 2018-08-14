@@ -28,6 +28,7 @@ import com.dnastack.beacon.utils.AdapterConfig;
 import org.ga4gh.beacon.Beacon;
 import org.ga4gh.beacon.BeaconAlleleRequest;
 import org.ga4gh.beacon.BeaconAlleleResponse;
+import org.ga4gh.beacon.Chromosome;
 
 import java.util.List;
 
@@ -41,7 +42,7 @@ public interface BeaconAdapter {
     /**
      * Initialization method for creating and configuring this new adapter
      *
-     * @param config
+     * @param config adapter configuration
      */
     void initAdapter(AdapterConfig config);
 
@@ -59,19 +60,25 @@ public interface BeaconAdapter {
      *
      * @param referenceName           name of the reference
      * @param start                   start position
+     * @param startMin                minimum start coordinate
+     * @param startMax                maximum start coordinate
+     * @param end                     precise end coordinate
+     * @param endMin                  minimum end coordinate
+     * @param endMax                  maximum end coordinate
      * @param referenceBases          reference bases
      * @param alternateBases          alternate bases
+     * @param variantType             used to denote structural variants
      * @param assemblyId              genome assembly
      * @param datasetIds              list of datasetIds
-     * @param includeDatasetResponses include
+     * @param includeDatasetResponses include datasets to response object
      * @return beacon allele response
      */
-    BeaconAlleleResponse getBeaconAlleleResponse(String referenceName, Long start, String referenceBases, String alternateBases, String assemblyId, List<String> datasetIds, Boolean includeDatasetResponses) throws BeaconException;
+    BeaconAlleleResponse getBeaconAlleleResponse(Chromosome referenceName, Long start, Integer startMin, Integer startMax, Integer end, Integer endMin, Integer endMax, String referenceBases, String alternateBases, String variantType, String assemblyId, List<String> datasetIds, BeaconAlleleRequest.IncludeDatasetResponsesEnum includeDatasetResponses) throws BeaconException;
 
     /**
      * Retrieve information about the specified beacon
      *
-     * @return beacon infroamtion
+     * @return beacon information
      */
     Beacon getBeacon() throws BeaconException;
 
