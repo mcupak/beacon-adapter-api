@@ -37,6 +37,7 @@ import java.util.List;
  */
 @Data
 @Builder
+@AllArgsConstructor
 public class AdapterConfig {
 
     /**

@@ -23,6 +23,7 @@
  */
 package com.dnastack.beacon.utils;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NonNull;
 import lombok.experimental.Builder;
@@ -34,6 +35,7 @@ import lombok.experimental.Builder;
  */
 @Data
 @Builder
+@AllArgsConstructor
 public class ConfigValue {
 
     /**
